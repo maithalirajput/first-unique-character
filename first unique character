@@ -1,0 +1,14 @@
+class Solution {
+    public int firstUniqChar(String s) {
+        
+        for(int i=0;i<s.length();i++){
+            char ch = s.charAt(i);
+            String str = s.substring(i+1);
+            String str2 = s.substring(0,i);
+            if(!str.contains(Character.toString(ch)) && !str2.contains(Character.toString(ch))){
+                return i;
+            }
+        }
+        return -1;
+    }
+}
